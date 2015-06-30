@@ -1,0 +1,606 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Rendering the Category and Recipe Pages | Django Workshop at PyConPH 2015</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.1.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../chapter-5/render-index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="5.2" data-basepath=".." data-revision="Tue Jun 30 2015 15:55:23 GMT+0800 (PHT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter-1/index.html">
+            
+                
+                    <a href="../chapter-1/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Setup: How to setup your machine for Django
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter-1/setup-osx.html">
+            
+                
+                    <a href="../chapter-1/setup-osx.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Setup for OSX
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter-1/setup-linux.html">
+            
+                
+                    <a href="../chapter-1/setup-linux.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Setup for Linux
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter-1/setup-windows.html">
+            
+                
+                    <a href="../chapter-1/setup-windows.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Setup for Windows
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter-2/index.html">
+            
+                
+                    <a href="../chapter-2/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Project: How to start your Django project
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter-2/setup.html">
+            
+                
+                    <a href="../chapter-2/setup.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Setting up the Development Environment
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter-2/create-project.html">
+            
+                
+                    <a href="../chapter-2/create-project.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Creating the Django Project
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter-2/configure-site.html">
+            
+                
+                    <a href="../chapter-2/configure-site.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Configuring the Site Settings
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter-3/index.html">
+            
+                
+                    <a href="../chapter-3/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Models: How to define your data
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter-3/create-app.html">
+            
+                
+                    <a href="../chapter-3/create-app.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Creating the Recipe App and its Models
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter-3/activate-admin.html">
+            
+                
+                    <a href="../chapter-3/activate-admin.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Activating the Models in Admin Site
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter-4/index.html">
+            
+                
+                    <a href="../chapter-4/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        URLs and Views: How to access your data
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter-4/name-url.html">
+            
+                
+                    <a href="../chapter-4/name-url.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Naming the URL for Index Page
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter-4/query-data.html">
+            
+                
+                    <a href="../chapter-4/query-data.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Querying Data for Index Page
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter-5/index.html">
+            
+                
+                    <a href="../chapter-5/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Templates: How to render your data
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="chapter-5/render-index.html">
+            
+                
+                    <a href="../chapter-5/render-index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Rendering the Index Page
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="chapter-5/render-category-recipe.html">
+            
+                
+                    <a href="../chapter-5/render-category-recipe.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Rendering the Category and Recipe Pages
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django Workshop at PyConPH 2015</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="exercise-5-2-rendering-the-category-and-recipe-pages">Exercise 5.2 - Rendering the Category and Recipe Pages</h2>
+<h4 id="1-edit-project-urls-py">1. Edit <code>/project/urls.py</code></h4>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf <span class="hljs-keyword">import</span> settings
+<span class="hljs-keyword">from</span> django.conf.urls.static <span class="hljs-keyword">import</span> static
+<span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> include, url
+<span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    url(<span class="hljs-string">r&apos;^admin/&apos;</span>, include(admin.site.urls)),
+    url(<span class="hljs-string">r&apos;^$&apos;</span>, views.home),
+    url(<span class="hljs-string">r&apos;^(?P&lt;category_slug&gt;[-\w]+)/$&apos;</span>, views.category), <span class="hljs-comment"># add this</span>
+    url(<span class="hljs-string">r&apos;^(?P&lt;category_slug&gt;[-\w]+)/(?P&lt;recipe_id&gt;\d+)/([-\w]+)/$&apos;</span>, views.recipe), <span class="hljs-comment"># add this</span>
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+</code></pre>
+<h4 id="2-edit-project-views-py-and-add-these-at-the-bottom">2. Edit <code>/project/views.py</code> and add these at the bottom</h4>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">category</span><span class="hljs-params">(request, category_slug)</span>:</span>
+    recipes = Recipe.objects.filter(category__slug=category_slug)
+
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;category.html&apos;</span>, {
+      <span class="hljs-string">&apos;recipes&apos;</span>: recipes,
+    })
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">recipe</span><span class="hljs-params">(request, category_slug, recipe_id)</span>:</span> 
+    recipe = Recipe.objects.get(id=recipe_id)
+
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;recipe.html&apos;</span>, { 
+      <span class="hljs-string">&apos;recipe&apos;</span>: recipe,
+    })
+</code></pre>
+<h4 id="3-edit-templates-category-html">3. Edit <code>/templates/category.html</code></h4>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- RECIPES --&gt;</span>
+{% for recipe in recipes %}
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-item&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">article</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-image&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;/{{ recipe.category.slug }}/{{ recipe.id }}/{{ recipe.slug }}/&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;{{ recipe.photo.url }}&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;{{ recipe.title }}&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-title&quot;</span>&gt;</span>{{ recipe.title }}<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{ recipe.description|truncatewords:20 }}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-info&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;total-time&quot;</span>&gt;</span>{{ recipe.cooktime }} minutes<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;kcals&quot;</span>&gt;</span>{{ recipe.calories }} kcals<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icons icons vegetarian-icon&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+{% endfor %}
+<span class="hljs-comment">&lt;!-- RECIPES --&gt;</span>
+</code></pre>
+<h4 id="4-edit-apps-recipes-models-py">4. Edit <code>/apps/recipes/models.py</code></h4>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Recipe</span><span class="hljs-params">(models.Model)</span>:</span>
+
+    ...
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__unicode__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.title
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ingredients_list</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.ingredients.split(<span class="hljs-string">&apos;\n&apos;</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">method_list</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.method.split(<span class="hljs-string">&apos;\n&apos;</span>)
+</code></pre>
+<h4 id="5-edit-templates-article-html">5. Edit <code>/templates/article.html</code></h4>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- RECIPE --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipes&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-header&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;title&quot;</span>&gt;</span>{{ recipe.title }}<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{ recipe.description }}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;buttons close&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-content&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;details&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;actions&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;buttons&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Add to favourites<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;buttons&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Print<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;{{ recipe.photo.url }}&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;Spicy Paneer Skewers&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-info&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icons cooktime-icon&quot;</span>&gt;</span>Cook {{ recipe.cooktime }} mins<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icons vegetarian-icon&quot;</span>&gt;</span>Vegetarian<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;per-serving&quot;</span>&gt;</span>Nutrition per serving<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{ recipe.calories }} kcalories, protein {{ recipe.protein }}g, carbohydrate {{ recipe.carbs }}g, fat {{ recipe.fat }}g<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;ingredients&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;title&quot;</span>&gt;</span>Ingredient<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Serves 10<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+                {{ recipe.ingredients_list|unordered_list }}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;method&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;title&quot;</span>&gt;</span>Method<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">ol</span>&gt;</span>
+                {{ recipe.method_list|unordered_list }}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- RECIPE --&gt;</span>
+</code></pre>
+<h4 id="6-run-the-site-server-and-browse-all-the-pages">6. Run the site server and browse all the pages.</h4>
+<pre><code class="lang-bash">(venv)website.com $ python manage.py runserver
+</code></pre>
+<h4 id="7-stage-all-files-and-commit">7. Stage all files and commit!</h4>
+<pre><code class="lang-bash">(venv)website.com $ git add .
+(venv)website.com $ git commit -m <span class="hljs-string">&quot;Rendered the category and article pages&quot;</span>
+(venv)website.com $ git status
+</code></pre>
+<h4 id="challenge-feeling-advanced-you-look-advanced-you-can-do-this">Challenge: Feeling Advanced? You look advanced. You can do this!</h4>
+<blockquote>
+<p>Why don&#x2019;t you try adding highlight to your navigation&#x2019;s active state when browsing a category or an article? <strong>Hint:</strong> use template inheritance to implement this. Add <code>class=&quot;active&quot;</code> to the nav&#x2019;s <code>&lt;li&gt;</code> element.</p>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter-5/render-index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Rendering the Index Page"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
