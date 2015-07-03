@@ -30,11 +30,14 @@ C:\> python --version
 https://www.python.org/downloads/windows/
 ```
 
-#### 4. Add the Python path to the system environment variables. To do this, go to `My Computer` > `Properties` > `Advanced System Settings` > `Environment Variables` > `System Variables` > `Path`. Click edit. Add this at the end of the line:
+#### 4. Add the Python path to the system environment variables. To do this, go to `My Computer` > `Properties` > `Advanced System Settings` > `Environment Variables` > `System Variables` > `Path` or `PYTHONPATH` (whichever will work). Click edit. Add this at the _end of the line_:
 
 ```bash
 ;C:\Python27;C:\Python27\Scripts
 ```
+
+![](windows.png)
+
 
 #### 5. Check again if Python is already accessible. Reopen the Command Prompt and execute:
 

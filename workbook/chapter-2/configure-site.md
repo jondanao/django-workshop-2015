@@ -50,6 +50,7 @@ Run 'python manage.py migrate' to apply them.
 #### 6. Your project structure should look like this.
 
 ```bash
+website.com
 ├── apps
 ├── db.sqlite3
 ├── manage.py
