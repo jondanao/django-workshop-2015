@@ -47,6 +47,14 @@ Django is a batteries-included Python web framework for creating dynamic web app
 2. Rendering the Category and Recipe Pages
 
 
+## Workshop Files
+
+1. [HTML Templates](https://github.com/jondanao/django-workshop-2015/raw/master/downloads/htmls.zip)
+2. [Presentation](https://github.com/jondanao/django-workshop-2015/raw/master/downloads/presentation.pdf)
+3. [Workbook in ePub](https://github.com/jondanao/django-workshop-2015/raw/master/downloads/workbook.epub)
+4. [Workbook in PDF](https://github.com/jondanao/django-workshop-2015/raw/master/downloads/workbook.pdf)
+
+
 ## Thank You
 
 * Python PH - https://www.facebook.com/groups/pythonph/
