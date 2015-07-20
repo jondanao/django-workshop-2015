@@ -24,7 +24,7 @@ urlpatterns = [
 def category(request, category_slug):
     recipes = Recipe.objects.filter(category__slug=category_slug)
 
-    return render(request, 'category.html', {
+    return render(request, 'recipes.html', {
       'recipes': recipes,
     })
 
@@ -36,14 +36,15 @@ def recipe(request, category_slug, recipe_id):
     })
 ```
 
-#### 3. Edit `/templates/category.html`
+#### 3. Edit `/templates/recipes.html`
 
 ```html
 <!-- RECIPES -->
 {% for recipe in recipes %}
     <div class="recipe-item">
         <article>
-            <a class="recipe-image" href="/{{ recipe.category.slug }}/{{ recipe.id }}/{{ recipe.slug }}/">
+            <a class="recipe-image" 
+            	href="/{{ recipe.category.slug }}/{{ recipe.id }}/{{ recipe.slug }}/">
                 <img src="{{ recipe.photo.url }}" alt="{{ recipe.title }}">
                 <h2 class="recipe-title">{{ recipe.title }}</h2>
             </a>
@@ -100,7 +101,12 @@ class Recipe(models.Model):
                 <li><span class="icons vegetarian-icon">Vegetarian</span></li>
             </ul>
             <p class="per-serving">Nutrition per serving</p>
-            <p>{{ recipe.calories }} kcalories, protein {{ recipe.protein }}g, carbohydrate {{ recipe.carbs }}g, fat {{ recipe.fat }}g</p>
+            <p>
+            		{{ recipe.calories }} kcalories, 
+            		protein {{ recipe.protein }}g, 
+            		carbohydrate {{ recipe.carbs }}g, 
+            		fat {{ recipe.fat }}g
+		     </p>
         </div>
         <div class="ingredients">
             <h2 class="title">Ingredient</h2>
@@ -134,5 +140,8 @@ class Recipe(models.Model):
 (venv)website.com $ git status
 ```
 
-#### Challenge: Feeling Advanced? You look advanced. You can do this!
+#### Challenge 1: Feeling Advanced? You look advanced. You can do this!
 > Why don’t you try adding highlight to your navigation’s active state when browsing a category or an article? **Hint:** use template inheritance to implement this. Add `class="active"` to the nav’s `<li>` element.
+
+#### Challenge 2: Let's finish the other section pages.
+> As you can see, there are sections for `High Protein`, `Low Calorie` and `30 Minute Meals`. These are not really categories based on the Category model. But you can create pseudo categories by querying predefined filters for these sections. **Hint:** Query for recipes with `protein > 35`, `calories < 250` and `cooktime <= 30`.

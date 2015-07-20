@@ -32,7 +32,8 @@ urlpatterns = [
                     <p class="meta">
                         <span class="time">Ready in {{ recipe.cooktime }} mins</span>
                         <span class="difficulty">{{ recipe.calories }} kcals</span>
-                        <a href="/{{ recipe.category.slug }}/{{ recipe.id }}/{{ recipe.slug }}/" class="button small">Try this one</a>
+                        <a href="/{{ recipe.category.slug }}/{{ recipe.id }}/{{ recipe.slug }}/" 
+                        	class="button small">Try this one</a>
                     </p>
                 </div>
             </li>

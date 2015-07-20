@@ -11,7 +11,7 @@
 ```bash
 # On Windows
 (venv)website.com $ cd apps
-(venv)website.com/apps $ python -m django-admin startapp articles
+(venv)website.com/apps $ python -m django-admin startapp recipes
 ```
 
 #### 2. Edit `/apps/recipes/models.py`
