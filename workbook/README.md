@@ -53,6 +53,7 @@ Django is a batteries-included Python web framework for creating dynamic web app
 2. [Presentation](https://github.com/jondanao/django-workshop-2015/raw/master/downloads/presentation.pdf)
 3. [Workbook in ePub](https://github.com/jondanao/django-workshop-2015/raw/master/downloads/workbook.epub)
 4. [Workbook in PDF](https://github.com/jondanao/django-workshop-2015/raw/master/downloads/workbook.pdf)
+5. [Sample Content](https://github.com/jondanao/django-workshop-2015/raw/master/downloads/content.zip)
 
 
 ## Thank You
