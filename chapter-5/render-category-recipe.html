@@ -34,7 +34,7 @@
     <body>
         
         
-    <div class="book" data-level="5.2" data-basepath=".." data-revision="Sat Jul 04 2015 01:04:25 GMT+0800 (PHT)">
+    <div class="book" data-level="5.2" data-basepath=".." data-revision="Mon Jul 20 2015 13:13:42 GMT+0800 (PHT)">
     
 
 <div class="book-summary">
@@ -473,7 +473,7 @@ urlpatterns = [
 <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">category</span><span class="hljs-params">(request, category_slug)</span>:</span>
     recipes = Recipe.objects.filter(category__slug=category_slug)
 
-    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;category.html&apos;</span>, {
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;recipes.html&apos;</span>, {
       <span class="hljs-string">&apos;recipes&apos;</span>: recipes,
     })
 
@@ -484,12 +484,13 @@ urlpatterns = [
       <span class="hljs-string">&apos;recipe&apos;</span>: recipe,
     })
 </code></pre>
-<h4 id="3-edit-templates-category-html">3. Edit <code>/templates/category.html</code></h4>
+<h4 id="3-edit-templates-recipes-html">3. Edit <code>/templates/recipes.html</code></h4>
 <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- RECIPES --&gt;</span>
 {% for recipe in recipes %}
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-item&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">article</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-image&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;/{{ recipe.category.slug }}/{{ recipe.id }}/{{ recipe.slug }}/&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-image&quot;</span> 
+                <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;/{{ recipe.category.slug }}/{{ recipe.id }}/{{ recipe.slug }}/&quot;</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;{{ recipe.photo.url }}&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;{{ recipe.title }}&quot;</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;recipe-title&quot;</span>&gt;</span>{{ recipe.title }}<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -539,7 +540,12 @@ urlpatterns = [
                 <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icons vegetarian-icon&quot;</span>&gt;</span>Vegetarian<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;per-serving&quot;</span>&gt;</span>Nutrition per serving<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{ recipe.calories }} kcalories, protein {{ recipe.protein }}g, carbohydrate {{ recipe.carbs }}g, fat {{ recipe.fat }}g<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+                    {{ recipe.calories }} kcalories, 
+                    protein {{ recipe.protein }}g, 
+                    carbohydrate {{ recipe.carbs }}g, 
+                    fat {{ recipe.fat }}g
+             <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;ingredients&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;title&quot;</span>&gt;</span>Ingredient<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
@@ -566,9 +572,13 @@ urlpatterns = [
 (venv)website.com $ git commit -m <span class="hljs-string">&quot;Rendered the category and article pages&quot;</span>
 (venv)website.com $ git status
 </code></pre>
-<h4 id="challenge-feeling-advanced-you-look-advanced-you-can-do-this">Challenge: Feeling Advanced? You look advanced. You can do this!</h4>
+<h4 id="challenge-1-feeling-advanced-you-look-advanced-you-can-do-this">Challenge 1: Feeling Advanced? You look advanced. You can do this!</h4>
 <blockquote>
 <p>Why don&#x2019;t you try adding highlight to your navigation&#x2019;s active state when browsing a category or an article? <strong>Hint:</strong> use template inheritance to implement this. Add <code>class=&quot;active&quot;</code> to the nav&#x2019;s <code>&lt;li&gt;</code> element.</p>
+</blockquote>
+<h4 id="challenge-2-let-s-finish-the-other-section-pages">Challenge 2: Let&apos;s finish the other section pages.</h4>
+<blockquote>
+<p>As you can see, there are sections for <code>High Protein</code>, <code>Low Calorie</code> and <code>30 Minute Meals</code>. These are not really categories based on the Category model. But you can create pseudo categories by querying predefined filters for these sections. <strong>Hint:</strong> Query for recipes with <code>protein &gt; 35</code>, <code>calories &lt; 250</code> and <code>cooktime &lt;= 30</code>.</p>
 </blockquote>
 
                     
